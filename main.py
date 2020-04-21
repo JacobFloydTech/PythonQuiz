@@ -1,6 +1,7 @@
 import os
 import sys
 import platform
+import time
 
 score = 5 #Setting the starting score
 
@@ -16,10 +17,14 @@ def input_answer(question, answer): #This is the function where our user will gi
         print("Nice one! One point!")
         score += 1
         print(score)
+        time.sleep(1)
+        clear()
     elif user_input.lower() not in answer:
         print("Got it wrong :(")
         score -= 1 
         print(score)
+        time.sleep(1)
+        clear()
 
 def start(): #Function for stating/explaining the gamein
     clear()
