@@ -12,7 +12,7 @@ def clear(): #This function is for clearing the terminal, it identifies the user
         os.system('clear')
 
 def typing(string): #Fancy typing go brrrrrr
-  for char in string:  
+  for char in string:
     sys.stdout.write(char)
     sys.stdout.flush() 
     time.sleep(0.10)
@@ -57,8 +57,6 @@ def input_answer(question, answer): #This is the function where our user will gi
         print(score, "points!")
         time.sleep(1.2)
         clear()
-
-
 
 def main():
     clear()
