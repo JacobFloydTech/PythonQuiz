@@ -5,11 +5,6 @@ import time
 
 score = 5 #Setting the starting score
 
-def clear(): #This function is for clearing the terminal, it identifies the user's OS then does the right command based on that 
-    if platform.system() == 'Windows': #Error fixed: Was using = instead of ==
-        os.system('cls')
-    else: #For Linux and MacOS (Not sure about MacOS though)
-        os.system('clear')
 
 def typing(string): #Fancy typing go brrrrrr
   for char in string:
@@ -31,7 +26,7 @@ def user_ready(): #I made this a function instead of just having it as an if sta
         user_ready()
 
 def start(): #Function for stating/explaining the game 
-    clear()
+    os.system('clear')
     print("Welcome to the True/False Python Quiz! There are 15 questions and you will start with 5 points, -1 points for each question wrong and +1 for each question right")
     print("So, are you ready? Y/N")
     user_ready()
@@ -45,21 +40,23 @@ def input_answer(question, answer): #This is the function where our user will gi
         score += 1
         print(score, "points!")
         time.sleep(1.2)
-        clear()
+        os.system('clear')
     elif user_input.lower() not in answer and user_input.lower() != "f" or "false":
         print("Please enter true, false, t, or f")
         time.sleep(0.5)
         user_input = input(f"{question}\n")
-        clear()
+        print(score, 'points!')
+        time.sleep(0.5)
+        os.system('clear')
     elif user_input.lower() not in answer:
         print("Got it wrong :(")
         score -= 1 
         print(score, "points!")
         time.sleep(1.2)
-        clear()
+        os.system('clear')
 
 def main():
-    clear()
+    os.system('clear')
     global score
     questions = [ #The questions of the quiz
         "\"==\" is the operator we use to check if something is the same as something else",
@@ -98,7 +95,7 @@ def main():
     for i in range(len(questions)): #range(len()) counts up how many questions they are
         print("Question {}:".format(i+1))
         input_answer(questions[i], answers[i]) #Then the loop runs my input_answer function for each number, from 0-15, running through each question 
-    clear()
+    os.system('clear')
     print("You got {}! \nDo you want to play again? Y/N".format(score))  #Error fixed: Was using % instead of .format() for {}
     user_ready()
 start() #Starting the game
