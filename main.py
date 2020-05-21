@@ -41,18 +41,18 @@ def input_answer(question, answer): #This is the function where our user will gi
         print(score, "points!")
         time.sleep(1.2)
         os.system('cls')
+    elif user_input.lower() not in answer:
+        print("Got it wrong :(")
+        score -= 1 
+        print(score, "points!")
+        time.sleep(1.2)
+        os.system('cls')
     elif user_input.lower() not in answer and user_input.lower() != "f" or "false":
         print("Please enter true, false, t, or f")
         time.sleep(0.5)
         user_input = input(f"{question}\n")
         print(score, 'points!')
         time.sleep(0.5)
-        os.system('cls')
-    elif user_input.lower() not in answer:
-        print("Got it wrong :(")
-        score -= 1 
-        print(score, "points!")
-        time.sleep(1.2)
         os.system('cls')
 
 def main():
