@@ -6,7 +6,7 @@ import time
 score = 5 #Setting the starting score
 
 
-def typing(string): #Fancy typing go brrrrrr
+def typing(string):
   for char in string:
     sys.stdout.write(char)
     sys.stdout.flush() 
